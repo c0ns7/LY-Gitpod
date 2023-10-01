@@ -1,0 +1,138 @@
+.header {
+    position: fixed;
+
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: hsla(0,5%,96%,.851);
+    backdrop-filter: saturate(.5) blur(5px);
+
+    z-index: 1;
+
+    &.scrolled {
+        border-bottom: 1px solid #dadada;
+    }
+
+    .wrapper {
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 0;
+
+            .menu {
+                &-burger {
+                    display: none;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    &-burger {
+                        display: block;
+
+                        color: #fff;
+
+                        padding: 6px 22px;
+
+                        border-radius: 12px;
+                        background-color: #12100C;
+
+                        transition: .2s ease-out;
+
+                        &:hover {
+                            background-color: #2d2d2d;
+                        }
+                    }
+                }
+
+                &-nav {
+                    .menu-login {
+                        display: none;
+                    }
+
+                    @media screen and (max-width: 1000px) {
+                        & {
+                            display: none;
+                        }
+
+                        .menu-login {
+                            display: block;
+                        }
+                    }
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 28px;
+
+                    a {
+                        color: rgba(18, 16, 12, 0.70);
+
+                        padding: 5px 10px;
+
+                        transition: .2s ease-out;
+
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+
+                    &.active {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        height: 100vh;
+                        background-color: hsl(0, 5%, 96%);
+                        width: 100%;
+                        max-width: 200px;
+                        border-right: 1px solid #dadada;
+                        padding: 25px;
+                        gap: 0;
+
+                        a {
+                            display: block;
+                            padding: 20px 0;
+                            width: 100%;
+                        }
+
+                        @media screen and (max-width: 480px) {
+                            & {
+                                max-width: 40%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buttons {
+                @media screen and (max-width: 1000px) {
+                    & {
+                        display: none;
+                    }
+                }
+
+                &-nav {
+                    a {
+                        color: #fff;
+
+                        padding: 6px 22px;
+
+                        border-radius: 12px;
+                        background-color: #12100C;
+
+                        transition: .2s ease-out;
+
+                        &:hover {
+                            background-color: #2d2d2d;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
